@@ -17,7 +17,7 @@ app.use(cors({
 app.use(publicRoutes)
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use((req, res, next) => {
-    if (req.url.includes('/docs')) {
+    if (req.url.includes('/docs') || req.url.includes('/user/auth')) {
         return next();
     }
     const [_, token] = req.headers['authorization']?.split(' ') || []
