@@ -30,7 +30,7 @@ class AccountController {
       const cards = await getCard({ filter: { accountId: account[0].id }, repository: cardRepository })
     
       res.status(200).json({
-        message: 'Conta encontrada carregado com sucesso',
+        message: 'Conta encontrada com sucesso',
         result: {
           account,
           transactions,
